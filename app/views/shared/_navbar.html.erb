@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary mt-0 mb-3">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/">ラベリット!</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <% if user_signed_in?%>
+          <%= link_to edit_user_path(current_user) ,class:"nav-link" do%>
+            <%= current_user.name %>
+          <% end%>
+        <% else%>
+          <%= link_to "新規登録", new_user_registration_path,method: :GET,class:"nav-link"%>
+        <% end%>
+      </li>
+      <li class="nav-item active">
+        <% if user_signed_in?%>
+          <%=link_to "ログアウト", destroy_user_session_path, method: :delete ,class:"nav-link"%>
+        <% else%>
+          <%= link_to "ログイン", new_user_session_path,method: :GET,class:"nav-link"%>
+        <% end%>
+      </li>
+    </ul>
+  </div>
+</nav> 
