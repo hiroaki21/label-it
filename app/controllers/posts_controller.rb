@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  before_action :set_login, only: [:new, :create]
   def index
   end
 
@@ -13,6 +13,12 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def set_login
+    unless user_signed_in?
+      redirect_to '/users/sign_in'
+    end
+  end
 
   def post_params
     params.require(:post).permit(:body).merge(user_id: current_user.id)
