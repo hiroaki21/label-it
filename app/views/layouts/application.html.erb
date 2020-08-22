@@ -15,5 +15,10 @@
 
   <body>
     <%= yield %>
+    <script>
+      $(window).on('popstate', function(event) {
+          window.location.reload();
+      });
+    </script>
   </body>
 </html>
