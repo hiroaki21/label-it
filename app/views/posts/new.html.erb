@@ -1,0 +1,20 @@
+<div class="container text-center">
+  <button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#post">ラベリット!</button>
+  <div><br><br><br><br></div>
+  <div class="modal fade" id="post" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <%= form_with model: @post ,url: "/posts/new", method: :post,id:"form" do |f| %>
+          <div class="modal-body">
+            <%= f.text_field :body, class: "form-control",id: "body", placeholder: "メモを記入 (140文字制限)",maxlength:"140" %>
+          </div>
+          <div class="modal-footer">
+            <%= f.submit "次へ",id:"submit" ,class: "btn btn-primary" %>
+            <button type="button" class="btn btn-secondary" id="destroy" data-dismiss="modal">破棄</button>
+            <button type="button" class="btn btn-info" id="reload">更新</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
