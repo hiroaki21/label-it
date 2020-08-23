@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def set_login
     unless user_signed_in?
-      redirect_to '/users/sign_in'
+      redirect_to '/login'
     end
   end
 
