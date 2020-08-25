@@ -1,10 +1,12 @@
+<%= render "shared/navbar" %>
 <header class='account-page' id='account-page'>
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
       <h2>Edit Account</h2>
       <h5>アカウントの編集</h5>
       <%= link_to "ログアウト", destroy_user_session_path,method: :delete, class: 'btn'%>
-      <%= link_to "戻る", :back, class: 'btn'%>
+      <%= link_to "戻る", :back, class: 'btn',data: {"turbolinks" => false}%>
+      <p><%= link_to "アカウント削除", destroy_user_registration_path,class:'btn', data: { confirm: "本当に削除しますか?" }, method: :delete %>
     </div>
     <div class='account-page__inner--right user-form'>
       <%= form_with model: current_user, local: true do |f|%>
@@ -16,6 +18,7 @@
             <%= f.text_field :name, autofocus: true%>
           </div>
         </div>
+
         <div class='field'>
           <div class='field-label'>
             <%= f.label :email%>
@@ -24,6 +27,7 @@
             <%= f.email_field :email%>
           </div>
         </div>
+
         <div class='actions'>
           <%= f.submit "Update", class: 'btn'%>
         </div>
