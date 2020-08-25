@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts=Post.all.order(id: "DESC")
+    @posts=Post.search(params[:keyword])
   end
 
   private
