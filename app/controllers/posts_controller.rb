@@ -12,6 +12,9 @@ class PostsController < ApplicationController
     render json:{post:post} 
   end
 
+  def search
+  end
+
   private
 
   def set_login
