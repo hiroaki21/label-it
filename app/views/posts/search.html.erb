@@ -1,20 +1,31 @@
 <%= render "shared/navbar" %>
+
 <div class="container text-center">
-  <div class="card-deck">
-    <div class="row">
-      <div class="col-sm-3"></div>
-    </div>
-    <% @posts.each do |post| %>
-      <% if post.user_id == current_user.id%>
-        <div class="col-sm-3">
-          <div class="card border-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header"><%= post.created_at.to_s(:datetime_jp)%></div>
-            <div class="card-body text-dark">
-              <h5 class="card-title"><%= post.body%></h5>
+
+  <%= form_with(url:search_posts_path,local: true,method: :get, class:"input-group") do |form|%>
+    <%= form.text_field :keyword, class:"form-control" ,placeholder:"テキスト入力欄"%>
+    <span class="input-group-btn">
+      <%=form.submit "検索",class:"btn btn-default"%>
+    </span>
+  <% end%>
+  <div>
+    <div class="card-deck">
+      <div class="row">
+        <div class="col-sm-3"></div>
+      </div>
+      <% @posts.each do |post| %>
+        <% if post.user_id == current_user.id%>
+          <div class="col-sm-3">
+            <div class="card border-primary mb-3" style="max-width: 18rem;">
+              <div class="card-header"><%= post.created_at.to_s(:datetime_jp)%></div>
+              <div class="card-body text-dark">
+                <h5 class="card-title"><%= post.body%></h5>
+              </div>
             </div>
           </div>
-        </div>
-      <% end%>
-    <%end%>
+        <% end%>
+      <%end%>
+    </div>
   </div>
+
 </div>
