@@ -5,9 +5,9 @@ class Post < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Post.where('body LIKE(?)', "%#{search}%").order(id: "DESC")
+      Post.where('body LIKE(?)', "%#{search}%")
     else
-      Post.all.order(id: "DESC")
+      Post.all
     end
   end
 end

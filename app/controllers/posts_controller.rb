@@ -13,7 +13,8 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts=Post.search(params[:keyword])
+    @posts=Post.search(params[:keyword]).order(id: "DESC")
+    @posts=Kaminari.paginate_array(@posts).page(params[:page]).per(20)
   end
 
   private
