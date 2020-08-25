@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_login, only: [:new, :create]
+  before_action :set_login, only: [:new, :create,:search]
   def index
   end
 
@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   end
 
   def search
+    @posts=Post.all.order(id: "DESC")
   end
 
   private
