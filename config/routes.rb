@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'posts#index'
   resources :users, only: [:edit,:update]
-  resources :posts, only: [:new,:create]
+  resources :posts do
+    collection do
+      get 'search'
+    end
+  end
   devise_for :users,skip: :all
   devise_scope :user do
     get 'signup' => 'devise/registrations#new', as: :new_user_registration
