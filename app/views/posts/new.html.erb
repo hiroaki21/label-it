@@ -7,7 +7,7 @@
       <div class="modal-content">
         <%= form_with model: @post ,url: "/posts/new", method: :post,id:"form" do |f| %>
           <div class="modal-body">
-            <%= f.text_field :body, class: "form-control",id: "body", placeholder: "メモを記入 (140文字制限)",maxlength:"140" %>
+            <%= f.text_field :body, class: "form-control",id: "body", placeholder: "ラベルを作成 (空欄不可・140文字制限)",maxlength:"140" %>
           </div>
           <div class="modal-footer">
             <%= f.submit "次へ",id:"submit" ,class: "btn btn-primary" %>
