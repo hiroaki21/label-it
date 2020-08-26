@@ -39,16 +39,22 @@
   <div class="pagination">
     <%= paginate @posts %>
   </div>
-  <div class='mypage-btn'>
+  <div class='search-mypage-btn'>
     <span class='side-btn-text'>マイページ</span>
     <a href="">
       <%= image_tag 'mypage.png' , size: '185x50' ,class: "side-btn-icon" %>
     </a>
   </div>
-  <div class='search-btn'>
+  <div class='search-labelit-btn'>
     <span class='side-btn-text'>ラベリット!</span>
     <a href="/posts/new">
       <%= image_tag 'label.png' , size: '185x50' ,data: {"turbolinks" => false},class: "side-btn-icon" %>
+    </a>
+  </div>
+  <div class='search-alignment-btn'>
+    <span class='side-btn-text'>ラベル整列</span>
+    <a href="">
+      <%= image_tag 'alignment.png' , size: '185x50' ,class: "side-btn-icon" %>
     </a>
   </div>
 </div>
