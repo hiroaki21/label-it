@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_login, only: [:new, :create,:search]
+  before_action :set_login, only: [:new, :create,:search,:destroy]
   def index
   end
 
@@ -15,6 +15,12 @@ class PostsController < ApplicationController
   def search
     @posts=Post.search(params[:keyword]).order(id: "DESC")
     @posts=Kaminari.paginate_array(@posts).page(params[:page]).per(20)
+  end
+
+  def destroy
+    @post=Post.find(params[:id])
+    @post_id = @post.id
+    @post.destroy
   end
 
   private
