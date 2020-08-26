@@ -8,6 +8,9 @@
       <%=form.submit "検索",class:"btn btn-default"%>
     </span>
   <% end%>
+  <div class="page-info">
+    <%= page_entries_info @posts %>
+  </div>
   <div>
     <div class="card-deck">
       <div class="row">
@@ -27,5 +30,7 @@
       <%end%>
     </div>
   </div>
-  <%= paginate @posts %>
+  <div class="pagination">
+    <%= paginate @posts %>
+  </div>
 </div>

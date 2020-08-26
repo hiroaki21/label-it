@@ -40,3 +40,14 @@
 .side-btn-icon {
   width: 60%;
 }
+
+.page-info{
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.pagination{
+  justify-content: center;
+  margin-top: 30px;
+}
