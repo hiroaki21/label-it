@@ -26,7 +26,9 @@
                 <h5 class="card-title"><%= post.body%></h5>
               </div>
               <div class="card-footer bg-transparent border-primary">
-                <%= link_to '削除', post_path(post), method: :delete, class:'post-destroy' ,remote: true%>
+                <%= link_to post_path(post), method: :delete, class:'post-destroy' ,remote: true do%>
+                  <% image_tag 'garbage.png',size:'20x20'%>
+                <% end%>
               </div>
             </div>
           </div>
