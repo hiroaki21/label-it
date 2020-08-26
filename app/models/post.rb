@@ -3,11 +3,11 @@ class Post < ApplicationRecord
 
   belongs_to :user
 
-  def self.search(search)
+  def self.search(search,id)
     if search != ""
-      Post.where('body LIKE(?)', "%#{search}%")
+      Post.where('body LIKE(?)', "%#{search}%").where(user_id: "#{id}")
     else
-      Post.all
+      Post.all.where(user_id: "#{id}")
     end
   end
 end
