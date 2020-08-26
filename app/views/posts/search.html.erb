@@ -20,11 +20,12 @@
       <% @posts.each do |post| %>
         <% if post.user_id == current_user.id%>
           <div class="col-sm-3">
-            <div class="card border-primary mb-3" style="max-width: 18rem;">
+            <div class="card border-primary mb-5" style="max-width: 18rem;">
               <div class="card-header"><%= post.created_at.to_s(:datetime_jp)%></div>
               <div class="card-body text-dark">
                 <h5 class="card-title"><%= post.body%></h5>
               </div>
+              <div class="card-footer bg-transparent border-primary">Footer</div>
             </div>
           </div>
         <% end%>
