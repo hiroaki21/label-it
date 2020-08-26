@@ -3,15 +3,16 @@
 <div class="container text-center">
 
   <%= form_with(url:search_posts_path,local: true,method: :get, class:"input-group") do |form|%>
-    <%= form.text_field :keyword, class:"form-control" ,placeholder:"テキスト入力欄"%>
-    <span class="input-group-btn">
+    <%= form.text_field :keyword, class:"form-control" ,placeholder:"キーワード入力欄"%>
+    <span class="input-group-btn ">
       <%=form.submit "検索",class:"btn btn-default"%>
     </span>
   <% end%>
-  <div class="page-info">
-    <%= page_entries_info @posts %>
-  </div>
+
   <div>
+    <div class="page-info">
+      <%= page_entries_info @posts %>
+    </div>
     <div class="card-deck">
       <div class="row">
         <div class="col-sm-3"></div>
