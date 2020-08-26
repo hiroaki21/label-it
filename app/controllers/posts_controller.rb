@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_login, only: [:new, :create]
+  before_action :set_login, only: [:new, :create,:search]
   def index
   end
 
@@ -10,6 +10,11 @@ class PostsController < ApplicationController
   def create
     post = Post.create(post_params) 
     render json:{post:post} 
+  end
+
+  def search
+    @posts=Post.search(params[:keyword]).order(id: "DESC")
+    @posts=Kaminari.paginate_array(@posts).page(params[:page]).per(20)
   end
 
   private
