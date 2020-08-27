@@ -29,6 +29,40 @@
   padding: 15px;
 }
 
+.search-mypage-btn {
+  width: 120px;
+  background: #007BFF;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 308px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.search-labelit-btn {
+  width: 120px;
+  background: #007BFF;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 170px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.search-alignment-btn {
+  width: 120px;
+  background: #007BFF;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+
 .side-btn-text {
   color: white;
   display: block;
@@ -53,5 +87,9 @@
 
 .pagination{
   justify-content: center;
-  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.card-footer{
+  text-align: left;
 }

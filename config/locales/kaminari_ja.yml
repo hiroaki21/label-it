@@ -10,7 +10,7 @@ ja:
     page_entries_info:
       one_page:
         display_entries:
-          zero: "該当するラベルは見つかりませんでした"
+          zero: "該当するラベルは見つかりませんでした。<br>全てのラベルを再表示するには空欄のまま「検索」を押してください。"
           one: "<strong>1-1</strong>/1件中"
           other: "<strong>1-%{count}</strong>/%{count}件中"
       more_pages:
