@@ -3,7 +3,7 @@
 <div class="container text-center">
 
   <%= form_with(url:search_posts_path,local: true,method: :get, class:"input-group") do |form|%>
-    <%= form.text_field :keyword, class:"form-control" ,placeholder:"キーワード入力欄"%>
+    <%= form.text_field :keyword, class:"form-control" ,placeholder:"キーワード入力欄 （全件表示：空欄で検索を実行)"%>
     <span class="input-group-btn ">
       <%=form.submit "検索",class:"btn btn-default"%>
     </span>
