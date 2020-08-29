@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_28_235946) do
+ActiveRecord::Schema.define(version: 2020_08_29_002702) do
 
   create_table "memo_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "post_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_235946) do
   end
 
   create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "text", null: false
+    t.string "title", null: false
     t.text "desc", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
