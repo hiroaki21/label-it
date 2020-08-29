@@ -1,0 +1,13 @@
+<div class='chat-room-form'>
+  <h1>新規</h1>
+  <%=form_with model: @memo, local: true do |f|%>
+  <%= f.text_field :title,placeholder: '入力'%>
+  <%= f.text_field :desc,placeholder: '入力'  %>
+  <div class="field">
+    <%= f.label :posts %><br>
+    <%= collection_check_boxes(:memo, :post_ids, Post.all.where(user_id: current_user.id), :id, :body ) do |t|  %>
+    <% t.label { t.check_box + t.text } %>
+  <% end %> 
+  <%= f.submit%>
+  <% end %>
+</div>
