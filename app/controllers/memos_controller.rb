@@ -1,5 +1,6 @@
 class MemosController < ApplicationController
-
+  before_action :set_login, only: [:new, :create]
+  
   def new
     @memo=Memo.new
     @posts=Post.search(params[:keyword],current_user.id).order(id: "DESC")
@@ -15,6 +16,12 @@ class MemosController < ApplicationController
   end
 
   private
+  def set_login
+    unless user_signed_in?
+      redirect_to '/login'
+    end
+  end
+
   def memo_params
     params.require(:memo).permit(:title,:desc,{:post_ids => []}).merge(user_id: current_user.id)
   end
