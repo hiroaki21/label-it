@@ -11,7 +11,7 @@ class MemosController < ApplicationController
     if @memo.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_memo_path
     end
   end
 

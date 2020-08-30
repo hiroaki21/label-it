@@ -3,13 +3,13 @@
   <%=form_with model: @memo, local: true do |f|%>
     <div class="form-group">
       <label for="title">タイトル</label>
-      <%= f.text_field :title,class:"form-control",placeholder: 'タイトルを入力してください'%>
+      <%= f.text_field :title,class:"form-control",placeholder: 'タイトルを入力してください',maxlength:"30"%>
       <small class="form-text text-muted">入力必須 ※30文字制限</small>
     </div>
     <div class="form-group">
       <label for="desc">詳細</label>
-      <%= f.text_area :desc,placeholder: 'ラベルの内容を推敲して、メモを作成してください',class:"form-control" ,rows:"7"  %>
-      <small class="form-text text-muted">入力必須※400文字制限</small>
+      <%= f.text_area :desc,placeholder: 'ラベルの内容を推敲して、メモを作成してください',class:"form-control" ,rows:"7" ,maxlength:"3000" %>
+      <small class="form-text text-muted">入力必須※3,000文字制限</small>
     </div>
     <label for="label" class="labelform">ラベル</label>
     <div class="card-deck-form">
