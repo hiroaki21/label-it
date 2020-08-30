@@ -2,6 +2,7 @@ class MemosController < ApplicationController
 
   def new
     @memo=Memo.new
+    @posts=Post.search(params[:keyword],current_user.id).order(id: "DESC")
   end
 
   def create
