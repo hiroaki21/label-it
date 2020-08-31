@@ -4,24 +4,13 @@
   background: #007BFF;
   text-align: center;
   border-radius: 4%;
-  bottom: 584px;
-  right: 32px;
-  position: fixed;
-  padding: 15px;
-}
-
-.search-btn {
-  width: 120px;
-  background: #007BFF;
-  text-align: center;
-  border-radius: 4%;
   bottom: 446px;
   right: 32px;
   position: fixed;
   padding: 15px;
 }
 
-.alignment-btn {
+.search-btn {
   width: 120px;
   background: #007BFF;
   text-align: center;
