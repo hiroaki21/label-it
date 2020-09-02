@@ -42,7 +42,9 @@
                 <h5 class="card-title"><%= post.body%></h5>
               </div>
               <div class="card-footer bg-transparent border-success">
+              <%= link_to memo_path(post.memos.pluck(:id)) do%>
                 <div class="already-memoit">メモイット!されています</div>
+              <% end%>
               </div>
             </div>
           </div>
