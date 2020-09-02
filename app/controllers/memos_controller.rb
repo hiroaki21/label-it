@@ -1,5 +1,10 @@
 class MemosController < ApplicationController
   before_action :set_login, only: [:new, :create]
+
+  def index
+    @memos = Memo.all.where(user_id:current_user.id).order(id:"DESC")
+    @memos = Kaminari.paginate_array(@memos).page(params[:page]).per(20)
+  end
   
   def new
     @memo=Memo.new
