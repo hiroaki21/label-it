@@ -1,0 +1,28 @@
+<%= render "shared/navbar" %>
+<div class="container text-center">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">タイトル</th>
+        <th scope="col">最終保存日時</th>
+        <th scope="col">処理</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% i = 1%>
+    <% @memos.each_with_index do |memo,i|%>
+      <tr>
+        <th scope="row"><%= i+1%></th>
+        <td><%= memo.title%></td>
+        <td><%= memo.created_at.to_s(:datetime_jp)%></td>
+        <td> </td>
+      </tr>
+    <%end%>
+    </tbody>
+  </table>
+</div>
+<div class="pagination">
+  <%= paginate @memos %>
+</div>
+<%= render "shared/sidebar" %>
