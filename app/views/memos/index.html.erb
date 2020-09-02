@@ -1,0 +1,38 @@
+<%= render "shared/navbar" %>
+<div class="container text-center">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">タイトル</th>
+        <th scope="col">処理</th>
+        <th scope="col">最終保存日時</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% i = 1%>
+    <% @memos.each_with_index do |memo,i|%>
+      <tr>
+        <th scope="row"><%= i+1%></th>
+        <td><%= memo.title%></td>
+        <td> 
+          <%=link_to memo_path(memo) do%>
+            <button type="button" class="btn btn-success" id="show" >詳細</button>
+          <% end%>
+          <%= link_to edit_memo_path(memo) do%>
+            <button type="button" class="btn btn-info" id="edit">編集</button>
+          <% end%>
+          <%= link_to memo_path(memo),:method => :delete do%>
+            <button type="button" class="btn btn-secondary" id="destroy" >削除</button>
+          <% end%>
+        </td>
+        <td><%= memo.created_at.to_s(:datetime_jp)%></td>
+      </tr>
+    <%end%>
+    </tbody>
+  </table>
+</div>
+<div class="pagination">
+  <%= paginate @memos %>
+</div>
+<%= render "shared/sidebar" %>
