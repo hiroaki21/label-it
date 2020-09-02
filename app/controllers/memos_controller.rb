@@ -11,7 +11,9 @@ class MemosController < ApplicationController
     if @memo.save
       redirect_to root_path
     else
-      redirect_to new_memo_path
+      @memo=Memo.new(memo_params)
+      @posts=Post.search(params[:keyword],current_user.id).order(id: "DESC")
+      render :new
     end
   end
 
