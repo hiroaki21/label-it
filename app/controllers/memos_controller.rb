@@ -1,5 +1,5 @@
 class MemosController < ApplicationController
-  before_action :set_login, only: [:new, :create]
+  before_action :set_login
 
   def index
     @memos = Memo.all.where(user_id:current_user.id).order(id:"DESC")
