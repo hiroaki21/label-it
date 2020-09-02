@@ -1,0 +1,36 @@
+<%= render "shared/navbar" %>
+<div class="container text-center">
+  <div class="card text-left">
+    <div class="card-header">
+      <%= @memo.title %>
+    </div>
+    <div class="card-body">
+      <h6 class="card-title"><%= @memo.updated_at.to_s(:datetime_jp)%></h6>
+      <p class="card-text"><%= @memo.desc %></p>
+      <%= link_to edit_memo_path(@memo) do%>
+        <button type="button" class="btn btn-info" id="edit">編集</button>
+      <% end%>
+      <%= link_to memo_path(@memo),:method => :delete do%>
+        <button type="button" class="btn btn-secondary" id="destroy" >削除</button>
+      <% end%>
+    </div>
+    <div class="card-deck-form">
+      <div class="card-deck  text-center">
+        <div class="row">
+          <div class="col-sm-3"></div>
+        </div>  
+        <% @posts.each do |post| %>
+          <div class="col-sm-3">
+            <div class="card border-primary mb-5" style="max-width: 18rem;">
+              <div class="card-header"><%= post.created_at.to_s(:datetime_jp)%></div>
+              <div class="card-body text-dark">
+                <h5 class="card-title"><%= post.body%></h5>
+              </div>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "shared/sidebar" %>
