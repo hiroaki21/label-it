@@ -7,12 +7,17 @@
     <div class="card-body">
       <h6 class="card-title"><%= @memo.updated_at.to_s(:datetime_jp)%></h6>
       <p class="card-text"><%= @memo.desc %></p>
-      <%= link_to edit_memo_path(@memo) do%>
-        <button type="button" class="btn btn-info" id="edit">編集</button>
-      <% end%>
-      <%= link_to memo_path(@memo),:method => :delete do%>
-        <button type="button" class="btn btn-secondary" id="destroy" >削除</button>
-      <% end%>
+      <div class="text-center">
+        <%= link_to edit_memo_path(@memo) do%>
+          <button type="button" class="btn btn-info" id="edit">編集</button>
+        <% end%>
+        <%= link_to :back do%>
+          <button type="button" class="btn btn-success" id="back" >戻る</button>
+        <% end%>
+        <%= link_to memo_path(@memo),:method => :delete do%>
+          <button type="button" class="btn btn-secondary" id="destroy" >削除</button>
+        <% end%>
+      </div>
     </div>
     <div class="card-deck-form">
       <div class="card-deck  text-center">
