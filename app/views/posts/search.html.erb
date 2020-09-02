@@ -1,60 +1,57 @@
 <%= render "shared/navbar" %>
-
 <div class="container text-center">
-
   <%= form_with(url:search_posts_path,local: true,method: :get, class:"input-group") do |form|%>
-    <%= form.text_field :keyword, class:"form-control" ,placeholder:"キーワード入力欄"%>
+    <%= form.text_field :keyword, class:"form-control" ,placeholder:"キーワード入力欄 （全件表示：空欄で検索を実行)"%>
     <span class="input-group-btn ">
       <%=form.submit "検索",class:"btn btn-default"%>
     </span>
   <% end%>
-
   <div>
     <div class="page-info">
       <%= page_entries_info @posts %>
     </div>
+    <a href="javascript:location.reload();">
+      <button type="button" class="btn btn-info mt-5">ラベル整列</button>
+    </a>
     <div class="card-deck">
       <div class="row">
         <div class="col-sm-3"></div>
       </div>
       <% @posts.each do |post| %>
-        <div class="col-sm-3">
-          <div id="post-<%= post.id%>">
-            <div class="card border-primary mb-5" style="max-width: 18rem;">
+        <%if post.memo_posts.blank?%>
+          <div class="col-sm-3">
+            <div id="post-<%= post.id%>">
+              <div class="card border-primary mb-5" style="max-width: 18rem;">
+                <div class="card-header"><%= post.created_at.to_s(:datetime_jp)%></div>
+                <div class="card-body text-dark">
+                  <h5 class="card-title"><%= post.body%></h5>
+                </div>
+                <div class="card-footer bg-transparent border-primary">
+                  <%= link_to post_path(post), method: :delete, class:'post-destroy' ,remote: true do%>
+                    <% image_tag 'garbage.png',size:'20x20'%>
+                  <% end%>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%else%>
+          <div class="col-sm-3">
+            <div class="card border-success mb-5" style="max-width: 18rem;">
               <div class="card-header"><%= post.created_at.to_s(:datetime_jp)%></div>
               <div class="card-body text-dark">
                 <h5 class="card-title"><%= post.body%></h5>
               </div>
-              <div class="card-footer bg-transparent border-primary">
-                <%= link_to post_path(post), method: :delete, class:'post-destroy' ,remote: true do%>
-                  <% image_tag 'garbage.png',size:'20x20'%>
-                <% end%>
+              <div class="card-footer bg-transparent border-success">
+                <div class="already-memoit">メモイット!されています</div>
               </div>
             </div>
           </div>
-        </div>
+        <%end%>
       <%end%>
     </div>
   </div>
   <div class="pagination">
     <%= paginate @posts %>
   </div>
-  <div class='search-mypage-btn'>
-    <span class='side-btn-text'>マイページ</span>
-    <a href="">
-      <%= image_tag 'mypage.png' , size: '185x50' ,class: "side-btn-icon" %>
-    </a>
-  </div>
-  <div class='search-labelit-btn'>
-    <span class='side-btn-text'>ラベリット!</span>
-    <a href="/posts/new">
-      <%= image_tag 'label.png' , size: '185x50' ,data: {"turbolinks" => false},class: "side-btn-icon" %>
-    </a>
-  </div>
-  <div class='search-alignment-btn'>
-    <span class='side-btn-text'>ラベル整列</span>
-    <a href="">
-      <%= image_tag 'alignment.png' , size: '185x50' ,class: "side-btn-icon" %>
-    </a>
-  </div>
+  <%= render "shared/sidebar" %>
 </div>

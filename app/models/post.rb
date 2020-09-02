@@ -1,7 +1,9 @@
 class Post < ApplicationRecord
-  validates :body,presence: true, length:{maximum:140}
-
+  has_many :memo_posts, dependent: :destroy
+  has_many :memos, :through => :memo_posts
   belongs_to :user
+
+  validates :body,presence: true, length:{maximum:140}
 
   def self.search(search,id)
     if search != ""

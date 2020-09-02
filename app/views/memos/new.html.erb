@@ -1,0 +1,53 @@
+<%= render "shared/navbar" %>
+<div class="container text-center">
+  <%=form_with model: @memo, local: true do |f|%>
+    <div class="form-group">
+      <label for="title">タイトル</label>
+      <%= f.text_field :title,class:"form-control",placeholder: 'タイトルを入力してください',maxlength:"30"%>
+      <small class="form-text text-muted">入力必須 ※30文字制限</small>
+    </div>
+    <div class="form-group">
+      <label for="desc">詳細</label>
+      <%= f.text_area :desc,placeholder: 'ラベルの内容を推敲して、メモを作成してください',class:"form-control" ,rows:"7" ,maxlength:"3000" %>
+      <small class="form-text text-muted">入力必須※3,000文字制限</small>
+    </div>
+    <label for="label" class="labelform">ラベル</label>
+    <div class="card-deck-form">
+      <div class="card-deck">
+        <div class="row">
+          <div class="col-sm-3"></div>
+        </div>
+        <% @posts.each do |post| %>
+        <%if post.memo_posts.blank?%>
+          <div class="col-sm-3">
+            <div id="post-<%= post.id%>">
+              <div class="card border-primary mb-5" style="max-width: 18rem;">
+                <div class="card-header"><%= post.created_at.to_s(:datetime_jp)%></div>
+                <div class="card-body text-dark">
+                  <h5 class="card-title"><%= post.body%></h5>
+                </div>
+                <div class="card-footer bg-transparent border-primary">
+                <div>
+                  <%= link_to post_path(post), method: :delete, class:'post-destroy' ,remote: true do%>
+                    <% image_tag 'garbage.png',size:'20x20'%>
+                  <% end%>
+                </div>
+                <div class="check-memoit">
+                  <%= collection_check_boxes(:memo, :post_ids, Post.where(id: post.id), :id, :body ) do |t| %>
+                    <% t.label { t.check_box + "メモイット!"} %>
+                  <% end %> 
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%end%>
+        <%end%>
+      </div>
+    </div>
+  <div class="memoit">
+    <%= f.submit "メモイット!",id:"submit" ,class: "btn btn-success" %>
+  </div>
+  <% end %>
+  <%= render "shared/sidebar" %>
+</div>
