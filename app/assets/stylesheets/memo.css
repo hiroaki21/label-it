@@ -35,3 +35,6 @@ label{
   margin-top: 30px; 
 }
 
+.card-text{
+  white-space: pre-wrap;
+}
