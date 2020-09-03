@@ -3,17 +3,14 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">No.</th>
         <th scope="col">タイトル</th>
         <th scope="col">処理</th>
         <th scope="col">最終保存日時</th>
       </tr>
     </thead>
     <tbody>
-    <% i = 1%>
-    <% @memos.each_with_index do |memo,i|%>
+    <% @memos.each do |memo,i|%>
       <tr>
-        <th scope="row"><%= i+1%></th>
         <td><%= memo.title%></td>
         <td> 
           <%=link_to memo_path(memo) do%>
@@ -22,7 +19,7 @@
           <%= link_to edit_memo_path(memo) do%>
             <button type="button" class="btn btn-info" id="edit">編集</button>
           <% end%>
-          <%= link_to memo_path(memo),:method => :delete do%>
+          <%= link_to memo_path(memo),:method => :delete, data: { confirm: '削除した場合、添付のラベルもまとめて削除されます。' } do%>
             <button type="button" class="btn btn-secondary" id="destroy" >削除</button>
           <% end%>
         </td>

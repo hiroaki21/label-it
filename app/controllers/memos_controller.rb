@@ -28,6 +28,14 @@ class MemosController < ApplicationController
     redirect_to root_path unless @memo.user_id ==current_user.id
   end
 
+  def destroy
+    @memo=Memo.find(params[:id])
+    @memo.destroy
+    @memos = Memo.all.where(user_id:current_user.id).order(id:"DESC")
+    @memos = Kaminari.paginate_array(@memos).page(params[:page]).per(20)
+    render :index
+  end
+
   private
   def set_login
     unless user_signed_in?
