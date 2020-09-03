@@ -22,6 +22,12 @@ class MemosController < ApplicationController
     end
   end
 
+  def show
+    @memo = Memo.find(params[:id])
+    @posts =  @memo.posts.map
+    redirect_to root_path unless @memo.user_id ==current_user.id
+  end
+
   private
   def set_login
     unless user_signed_in?
