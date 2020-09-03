@@ -36,6 +36,25 @@ class MemosController < ApplicationController
     render :index
   end
 
+  def edit
+    @memo = Memo.find(params[:id])
+    @posts=Post.search(params[:keyword],current_user.id).order(id: "DESC")
+    redirect_to root_path unless @memo.user_id ==current_user.id
+  end
+
+  def update
+    @memo = Memo.find(params[:id])
+    if @memo.update(memo_params)
+      @memo = Memo.find(params[:id])
+      @posts =  @memo.posts.map
+      render :show
+    else
+      @memo = Memo.find(params[:id])
+      @posts=Post.search(params[:keyword],current_user.id).order(id: "DESC")
+      render :edit
+    end
+  end
+
   private
   def set_login
     unless user_signed_in?
