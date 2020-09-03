@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-    <% @memos.each do |memo,i|%>
+    <% @memos.each do |memo|%>
       <tr>
         <td><%= memo.title%></td>
         <td> 
@@ -23,7 +23,7 @@
             <button type="button" class="btn btn-secondary" id="destroy" >削除</button>
           <% end%>
         </td>
-        <td><%= memo.created_at.to_s(:datetime_jp)%></td>
+        <td><%= memo.updated_at.to_s(:datetime_jp)%></td>
       </tr>
     <%end%>
     </tbody>
