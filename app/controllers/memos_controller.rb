@@ -14,7 +14,7 @@ class MemosController < ApplicationController
   def create
     @memo=Memo.new(memo_params)
     if @memo.save
-      redirect_to root_path
+      redirect_to memo_path(@memo)
     else
       @memo=Memo.new(memo_params)
       @posts=Post.search(params[:keyword],current_user.id).order(id: "DESC")
@@ -46,8 +46,8 @@ class MemosController < ApplicationController
     @memo = Memo.find(params[:id])
     if @memo.update(memo_params)
       @memo = Memo.find(params[:id])
-      @posts =  @memo.posts.map
-      render :show
+      @posts =  @memo.posts.map.sort.reverse
+      redirect_to memo_path
     else
       @memo = Memo.find(params[:id])
       @posts=Post.search(params[:keyword],current_user.id).order(id: "DESC")
