@@ -2,7 +2,7 @@ class MemosController < ApplicationController
   before_action :set_login
 
   def index
-    @memos = Memo.all.where(user_id:current_user.id).order(id:"DESC")
+    @memos = Memo.all.where(user_id:current_user.id).order(updated_at:"DESC")
     @memos = Kaminari.paginate_array(@memos).page(params[:page]).per(20)
   end
   
@@ -31,7 +31,7 @@ class MemosController < ApplicationController
   def destroy
     @memo=Memo.find(params[:id])
     @memo.destroy
-    @memos = Memo.all.where(user_id:current_user.id).order(id:"DESC")
+    @memos = Memo.all.where(user_id:current_user.id).order(updated_at:"DESC")
     @memos = Kaminari.paginate_array(@memos).page(params[:page]).per(20)
     render :index
   end
