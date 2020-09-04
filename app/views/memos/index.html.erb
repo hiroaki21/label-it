@@ -1,5 +1,9 @@
 <%= render "shared/navbar" %>
 <div class="container text-center">
+<div class="table-name">
+  <label for="title">メモ一覧(全件表示)</label>
+</div>
+<div class="table-form">
   <table class="table table-striped">
     <thead>
       <tr>
@@ -28,6 +32,7 @@
     <%end%>
     </tbody>
   </table>
+</div>
 </div>
 <div class="pagination">
   <%= paginate @memos %>

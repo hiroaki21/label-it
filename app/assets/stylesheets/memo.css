@@ -42,3 +42,13 @@ label{
 .memo-show{
   margin: 30px 0 50px 0;
 }
+
+.table-form{
+  height: 1310px;
+  margin-bottom: 30px;
+  background-color: whitesmoke;
+}
+
+.table-name{
+  margin: 250px 0px 20px 0px;
+}
