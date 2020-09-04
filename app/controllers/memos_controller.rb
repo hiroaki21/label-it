@@ -2,7 +2,7 @@ class MemosController < ApplicationController
   before_action :set_login
 
   def index
-    @memos = Memo.all.where(user_id:current_user.id).order(id:"DESC")
+    @memos = Memo.all.where(user_id:current_user.id).order(updated_at:"DESC")
     @memos = Kaminari.paginate_array(@memos).page(params[:page]).per(20)
   end
   
@@ -14,7 +14,7 @@ class MemosController < ApplicationController
   def create
     @memo=Memo.new(memo_params)
     if @memo.save
-      redirect_to root_path
+      redirect_to memo_path(@memo)
     else
       @memo=Memo.new(memo_params)
       @posts=Post.search(params[:keyword],current_user.id).order(id: "DESC")
@@ -31,9 +31,28 @@ class MemosController < ApplicationController
   def destroy
     @memo=Memo.find(params[:id])
     @memo.destroy
-    @memos = Memo.all.where(user_id:current_user.id).order(id:"DESC")
+    @memos = Memo.all.where(user_id:current_user.id).order(updated_at:"DESC")
     @memos = Kaminari.paginate_array(@memos).page(params[:page]).per(20)
     render :index
+  end
+
+  def edit
+    @memo = Memo.find(params[:id])
+    @posts=Post.search(params[:keyword],current_user.id).order(id: "DESC")
+    redirect_to root_path unless @memo.user_id ==current_user.id
+  end
+
+  def update
+    @memo = Memo.find(params[:id])
+    if @memo.update(memo_params)
+      @memo = Memo.find(params[:id])
+      @posts =  @memo.posts.map.sort.reverse
+      redirect_to memo_path
+    else
+      @memo = Memo.find(params[:id])
+      @posts=Post.search(params[:keyword],current_user.id).order(id: "DESC")
+      render :edit
+    end
   end
 
   private
