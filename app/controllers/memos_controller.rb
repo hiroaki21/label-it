@@ -24,6 +24,7 @@ class MemosController < ApplicationController
 
   def show
     @memo = Memo.find(params[:id])
+    @favorite = current_user.favorites.find_by(memo_id: @memo.id)
     @posts =  @memo.posts.map
     redirect_to root_path unless @memo.user_id ==current_user.id
   end
