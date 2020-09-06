@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_29_002702) do
+ActiveRecord::Schema.define(version: 2020_09_06_170959) do
+
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "memo_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "memo_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "post_id"
     t.bigint "memo_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
     t.index ["memo_id"], name: "index_memo_posts_on_memo_id"
     t.index ["post_id"], name: "index_memo_posts_on_post_id"
+    t.index ["user_id"], name: "index_memo_posts_on_user_id"
   end
 
   create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_08_29_002702) do
 
   add_foreign_key "memo_posts", "memos"
   add_foreign_key "memo_posts", "posts"
+  add_foreign_key "memo_posts", "users"
   add_foreign_key "memos", "users"
   add_foreign_key "posts", "users"
 end
