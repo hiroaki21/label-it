@@ -6,15 +6,17 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">タイトル</th>
-        <th scope="col">処理</th>
-        <th scope="col">最終保存日時</th>
+        <th style="width: 10%"scope="col"></th>
+        <th style="width: 40%",scope="col">タイトル</th>
+        <th style="width: 25%",scope="col">処理</th>
+        <th style="width: 25%",scope="col">最終保存日時</th>
       </tr>
     </thead>
     <tbody>
     <% @favomemos.each do |favomemo|%>
       <%if favomemo.favorites.present?%>
       <tr>
+        <td></td>
         <td><%= favomemo.title%></td>
         <td> 
           <%=link_to memo_path(favomemo) do%>
@@ -41,10 +43,10 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">お気に入り</th>
-        <th scope="col">タイトル</th>
-        <th scope="col">処理</th>
-        <th scope="col">最終保存日時</th>
+        <th style="width: 10%"scope="col">お気に入り</th>
+        <th style="width: 40%"scope="col">タイトル</th>
+        <th style="width: 25%"scope="col">処理</th>
+        <th style="width: 25%"scope="col">最終保存日時</th>
       </tr>
     </thead>
     <tbody>
