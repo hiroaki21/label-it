@@ -6,9 +6,9 @@
       <%= @memo.title %>
       <div class="text-center">
         <% if @favorite.present? %>
-          <%= link_to "解除", favorite_path(id: @favorite.id), method: :delete, class: "btn btn-warning text-muted" %>
+          <%= link_to "解除", favorite_path(id: @favorite.id), method: :delete, class: "btn btn-warning text-white" %>
         <% else %>
-          <%= link_to "登録", favorites_path(memo_id: @memo.id), method: :post, class:"btn btn-warning text-muted" %>                              
+          <%= link_to "登録", favorites_path(memo_id: @memo.id), method: :post, class:"btn btn-secondary text-white" %>                              
         <% end %>
         <%= link_to edit_memo_path(@memo) do%>
           <button type="button" class="btn btn-info" id="edit">編集</button>
