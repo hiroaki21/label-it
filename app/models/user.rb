@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'include both letters and numbers' },on: :create
 
   has_many :posts, dependent: :destroy
+  has_many :memos, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end

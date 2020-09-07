@@ -4,6 +4,7 @@ class MemosController < ApplicationController
   def index
     @memos = Memo.all.where(user_id:current_user.id).order(updated_at:"DESC")
     @memos = Kaminari.paginate_array(@memos).page(params[:page]).per(20)
+    @favomemos = Memo.all.where(user_id:current_user.id).order(updated_at:"DESC")
   end
   
   def new
@@ -24,6 +25,7 @@ class MemosController < ApplicationController
 
   def show
     @memo = Memo.find(params[:id])
+    @favorite = current_user.favorites.find_by(memo_id: @memo.id)
     @posts =  @memo.posts.map
     redirect_to root_path unless @memo.user_id ==current_user.id
   end
@@ -33,7 +35,7 @@ class MemosController < ApplicationController
     @memo.destroy
     @memos = Memo.all.where(user_id:current_user.id).order(updated_at:"DESC")
     @memos = Kaminari.paginate_array(@memos).page(params[:page]).per(20)
-    render :index
+    redirect_to memos_path
   end
 
   def edit
