@@ -1,9 +1,8 @@
 <%= render "shared/navbar" %>
 <div class="container text-center">
 <div class="table-name">
-  <label for="title">メモ一覧(全件表示)</label>
+  <label for="title">お気に入り一覧</label>
 </div>
-<div class="table-form">
   <table class="table table-striped">
     <thead>
       <tr>
@@ -13,8 +12,49 @@
       </tr>
     </thead>
     <tbody>
+    <% @favomemos.each do |favomemo|%>
+      <%if favomemo.favorites.present?%>
+      <tr>
+        <td><%= favomemo.title%></td>
+        <td> 
+          <%=link_to memo_path(favomemo) do%>
+            <button type="button" class="btn btn-success" id="show" >詳細</button>
+          <% end%>
+          <%= link_to edit_memo_path(favomemo) do%>
+            <button type="button" class="btn btn-info" id="edit">編集</button>
+          <% end%>
+          <%= link_to memo_path(favomemo),:method => :delete, data: { confirm: '削除した場合、添付のラベルもまとめて削除されます。' } do%>
+            <button type="button" class="btn btn-secondary" id="destroy" >削除</button>
+          <% end%>
+        </td>
+        <td><%= favomemo.updated_at.to_s(:datetime_jp)%></td>
+      </tr>
+      <%end%>
+    <%end%>
+    </tbody>
+  </table>
+
+<div class="table-name">
+  <label for="title">メモ一覧(全件表示)</label>
+</div>
+<div class="table-form">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">お気に入り</th>
+        <th scope="col">タイトル</th>
+        <th scope="col">処理</th>
+        <th scope="col">最終保存日時</th>
+      </tr>
+    </thead>
+    <tbody>
     <% @memos.each do |memo|%>
       <tr>
+        <td>
+          <%if memo.favorites.present?%>
+            <%= image_tag 'star.png' %>
+          <%end%>
+        </td>
         <td><%= memo.title%></td>
         <td> 
           <%=link_to memo_path(memo) do%>

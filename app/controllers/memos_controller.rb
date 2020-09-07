@@ -4,6 +4,7 @@ class MemosController < ApplicationController
   def index
     @memos = Memo.all.where(user_id:current_user.id).order(updated_at:"DESC")
     @memos = Kaminari.paginate_array(@memos).page(params[:page]).per(20)
+    @favomemos = Memo.all.where(user_id:current_user.id).order(updated_at:"DESC")
   end
   
   def new
