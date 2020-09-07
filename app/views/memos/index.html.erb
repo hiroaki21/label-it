@@ -6,7 +6,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th style="width: 10%"scope="col"></th>
+        <th style="width: 10%",scope="col"></th>
         <th style="width: 40%",scope="col">タイトル</th>
         <th style="width: 25%",scope="col">処理</th>
         <th style="width: 25%",scope="col">最終保存日時</th>
@@ -18,16 +18,10 @@
       <tr>
         <td></td>
         <td><%= favomemo.title%></td>
-        <td> 
-          <%=link_to memo_path(favomemo) do%>
-            <button type="button" class="btn btn-success" id="show" >詳細</button>
-          <% end%>
-          <%= link_to edit_memo_path(favomemo) do%>
-            <button type="button" class="btn btn-info" id="edit">編集</button>
-          <% end%>
-          <%= link_to memo_path(favomemo),:method => :delete, data: { confirm: '削除した場合、添付のラベルもまとめて削除されます。' } do%>
-            <button type="button" class="btn btn-secondary" id="destroy" >削除</button>
-          <% end%>
+        <td>
+        <%= link_to "詳細" ,memo_path(favomemo),class:"btn btn-success"%>
+        <%= link_to "編集" ,edit_memo_path(favomemo) ,class:"btn btn-info"%>
+        <%= link_to "削除" ,memo_path(favomemo),method: :delete, class:"btn btn-secondary" , data: { confirm: '削除した場合、添付のラベルもまとめて削除されます。' } %>
         </td>
         <td><%= favomemo.updated_at.to_s(:datetime_jp)%></td>
       </tr>
@@ -59,15 +53,9 @@
         </td>
         <td><%= memo.title%></td>
         <td> 
-          <%=link_to memo_path(memo) do%>
-            <button type="button" class="btn btn-success" id="show" >詳細</button>
-          <% end%>
-          <%= link_to edit_memo_path(memo) do%>
-            <button type="button" class="btn btn-info" id="edit">編集</button>
-          <% end%>
-          <%= link_to memo_path(memo),:method => :delete, data: { confirm: '削除した場合、添付のラベルもまとめて削除されます。' } do%>
-            <button type="button" class="btn btn-secondary" id="destroy" >削除</button>
-          <% end%>
+        <%= link_to "詳細" ,memo_path(memo),class:"btn btn-success"%>
+        <%= link_to "編集" ,edit_memo_path(memo) ,class:"btn btn-info"%>
+        <%= link_to "削除" ,memo_path(memo),method: :delete, class:"btn btn-secondary" , data: { confirm: '削除した場合、添付のラベルもまとめて削除されます。' } %>
         </td>
         <td><%= memo.updated_at.to_s(:datetime_jp)%></td>
       </tr>
