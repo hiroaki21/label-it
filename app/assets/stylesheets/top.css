@@ -1,0 +1,29 @@
+.jumbotron-extend {
+  position: relative;
+  height: 80vh;
+  min-height: 300px;
+  background:url("top.jpg") no-repeat center center ;
+  background-size: cover;
+}
+
+.jumbotron-container{
+  position: relative;
+  top: 35%;
+  text-align: left;
+  transform: translateY(-50%);
+}
+
+.top-name{
+  font-family: 'Playfair Display', serif;
+  margin-left: 800px;
+  line-height: 4rem;
+}
+
+.key{
+  color: #007BFF;
+}
+
+.top-labelit{
+  margin-top: 50px;
+  margin-left: 800px;
+}
