@@ -27,3 +27,66 @@
   margin-top: 50px;
   margin-left: 800px;
 }
+
+.second-content{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.heading-name{
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.icon-list{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.top-labelit-btn {
+  width: 120px;
+  background: #007BFF;
+  text-align: center;
+  border-radius: 4%;
+  padding: 15px;
+}
+
+.top-search-btn {
+  width: 120px;
+  background: #007BFF;
+  text-align: center;
+  border-radius: 4%;
+  padding: 15px;
+  margin-left: 100px;
+}
+
+.top-memoit-btn {
+  width: 120px;
+  background :#339933;
+  text-align: center;
+  border-radius: 4%;
+  padding: 15px;
+  margin-left: 100px;
+}
+
+.top-index-btn {
+  width: 120px;
+  background: #339933;
+  text-align: center;
+  border-radius: 4%;
+  padding: 15px;
+  margin-left: 100px;
+}
+
+.top-btn-text {
+  color: white;
+  display: block;
+  font-size: 17px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.top-btn-icon {
+  width: 60%;
+}
