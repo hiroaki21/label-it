@@ -1,6 +1,6 @@
 
 .modal-dialog {
-  padding-top: 35px;
+  padding-top: 50px;
 }
 
 .btn{
@@ -9,6 +9,10 @@
 
 .card-deck{
   padding-top: 50px;
+}
+
+.card-deck-post{
+  padding-top: 90px;
 }
 
 .input-group{
