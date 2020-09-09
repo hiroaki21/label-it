@@ -14,7 +14,7 @@
         <%= link_to "戻る" ,:back ,class:"btn btn-success"%>
         <%= link_to "削除" ,memo_path(@memo),method: :delete, class:"btn btn-secondary" , data: { confirm: '削除した場合、添付のラベルもまとめて削除されます。' } %>
       </div>    
-      <div class="text-center"><%= flash[:notice] %></div>  
+      <div class="text-center"><%= flash[:key] %></div>  
     </div>
     <div class="card-body" style="max-height: 400px; overflow: auto;">
       <h6 class="card-title"><%= @memo.updated_at.to_s(:datetime_jp)%></h6>
