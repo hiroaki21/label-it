@@ -1,5 +1,6 @@
 function label_post() {
   const submit = document.getElementById("submit");
+  try{
   submit.addEventListener("click", (e) => {
     const formData = new FormData(document.getElementById("form"));
     const XHR = new XMLHttpRequest();
@@ -42,6 +43,7 @@ function label_post() {
 
     e.preventDefault();
   })
+  }catch(error){}
 }
 
 window.addEventListener("load", label_post);
