@@ -1,6 +1,6 @@
 <%= render "shared/navbar" %>
 <div class="container text-center">
-  <%=form_with model: @memo, local: true do |f|%>
+  <%=form_with model: @memo, url:memos_path, method: :post, local: true do |f|%>
     <div class="form-group">
       <label for="title">タイトル</label>
       <%= f.text_field :title,class:"form-control",placeholder: 'タイトルを入力してください',maxlength:"30"%>
