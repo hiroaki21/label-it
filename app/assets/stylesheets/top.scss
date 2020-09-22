@@ -1,21 +1,21 @@
 .jumbotron-extend {
   position: relative;
   height: 80vh;
-  min-height: 300px;
-  background:image-url("top.jpg") no-repeat center center ;
+  min-height: 80%;
+  background:image-url("top.jpg");
   background-size: cover;
 }
 
 .jumbotron-container{
   position: relative;
-  top: 35%;
+  top: 40%;
   text-align: left;
   transform: translateY(-50%);
 }
 
 .top-name{
   font-family: 'Playfair Display', serif;
-  margin-left: 800px;
+  margin-left: 55%;
   line-height: 4rem;
 }
 
@@ -25,7 +25,7 @@
 
 .top-labelit{
   margin-top: 50px;
-  margin-left: 800px;
+  margin-left: 55%;
 }
 
 .second-content{
