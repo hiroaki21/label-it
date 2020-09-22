@@ -15,8 +15,8 @@ function label_post() {
       const timeFormat = date.toLocaleString();
       
       const HTML = `
-      <div class="col-sm-3">
-        <div class="card border-primary mb-3" style="max-width: 18rem;" data-id=${it.id}>
+      <div class="card-post">
+        <div class="card border-primary mb-3" style="width: 15rem;" data-id=${it.id}>
           <div class="card-header">${timeFormat}</div>
           <div class="card-body text-dark">
             <h5 class="card-title">${it.body}</h5>

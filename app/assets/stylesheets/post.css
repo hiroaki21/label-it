@@ -9,10 +9,20 @@
 
 .card-deck{
   padding-top: 50px;
+  justify-content: space-evenly;
+}
+
+.row{
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .card-deck-post{
   padding-top: 90px;
+}
+
+.card-post{
+  margin-bottom: 30px;
 }
 
 .input-group{
