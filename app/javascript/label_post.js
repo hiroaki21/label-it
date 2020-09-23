@@ -17,7 +17,7 @@ function label_post() {
       
       const HTML = `
       <div class="card-post">
-        <div class="card border-primary mb-3" style="width: 15rem;" data-id=${it.id}>
+        <div class="card border-primary mb-3" style="width: 15rem;">
           <div class="card-header">${timeFormat}</div>
           <div class="card-body text-dark">
             <h5 class="card-title">${it.body}</h5>
@@ -43,7 +43,7 @@ function label_post() {
 
     e.preventDefault();
   })
-  }catch(error){}
+  }catch(ignoreError){}
 }
 
 window.addEventListener("load", label_post);

@@ -4,7 +4,7 @@ function label_reload() {
   reload.addEventListener("click", (e) => {
     window.location.reload();
   })
-  }catch(error){}
+  }catch(ignoreError){}
 }
 
 window.addEventListener("load", label_reload);

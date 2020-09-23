@@ -5,7 +5,7 @@ function label_reset() {
   destroy.addEventListener("click", (e) => {
     $('input[type="text"]').val('');
   })
-  }catch(error){}
+  }catch(ignoreError){}
 }
 
 window.addEventListener("load", label_reset);
