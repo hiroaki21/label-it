@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_login, only: [:new, :create,:search,:destroy]
+  before_action :set_login, only: [:new, :create, :search, :destroy]
   def index
   end
 
@@ -8,17 +8,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.create(post_params) 
-    render json:{post:post} 
+    post = Post.create(post_params)
+    render json: { post: post }
   end
 
   def search
-    @posts=Post.search(params[:keyword],current_user.id).order(id: "DESC")
-    @posts=Kaminari.paginate_array(@posts).page(params[:page]).per(20)
+    @posts = Post.search(params[:keyword], current_user.id).order(id: 'DESC')
+    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(20)
   end
 
   def destroy
-    @post=Post.find(params[:id])
+    @post = Post.find(params[:id])
     @post_id = @post.id
     @post.destroy
   end
@@ -26,9 +26,7 @@ class PostsController < ApplicationController
   private
 
   def set_login
-    unless user_signed_in?
-      redirect_to '/login'
-    end
+    redirect_to '/login' unless user_signed_in?
   end
 
   def post_params

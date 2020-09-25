@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user=User.find(current_user.id)
+    @user = User.find(current_user.id)
     if @user.update(user_params)
       redirect_to root_path
     else
@@ -16,12 +16,10 @@ class UsersController < ApplicationController
   private
 
   def set_login
-    unless user_signed_in?
-      redirect_to '/login'
-    end
+    redirect_to '/login' unless user_signed_in?
   end
 
   def user_params
-    params.require(:user).permit(:name,:email)
+    params.require(:user).permit(:name, :email)
   end
 end

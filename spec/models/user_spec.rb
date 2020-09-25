@@ -13,20 +13,20 @@ RSpec.describe User, type: :model do
     it 'nameが空では登録できないこと' do
       @user.name = nil
       @user.valid?
-      expect(@user.errors.full_messages).to include("Nameを入力してください")
+      expect(@user.errors.full_messages).to include('Nameを入力してください')
     end
 
     it 'emailが空では登録できないこと' do
       @user.email = nil
       @user.valid?
-      expect(@user.errors.full_messages).to include("Eメールを入力してください")
+      expect(@user.errors.full_messages).to include('Eメールを入力してください')
     end
 
     it 'emailが一意でないと登録できないこと' do
       @user.save
       another_user = FactoryBot.build(:user, email: @user.email)
       another_user.valid?
-      expect(another_user.errors.full_messages).to include("Eメールはすでに存在します")
+      expect(another_user.errors.full_messages).to include('Eメールはすでに存在します')
     end
 
     it 'emailに@を含むと登録できる' do
@@ -37,13 +37,13 @@ RSpec.describe User, type: :model do
     it 'passwordが空では登録できないこと' do
       @user.password = nil
       @user.valid?
-      expect(@user.errors.full_messages).to include("パスワードを入力してください")
+      expect(@user.errors.full_messages).to include('パスワードを入力してください')
     end
 
     it 'passwordが存在してもpassword_confirmationが空では登録できないこと' do
       @user.password_confirmation = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
+      expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
     end
 
     it 'passwordは6文字以上でないと登録できないこと' do
