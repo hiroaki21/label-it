@@ -147,7 +147,6 @@
 - has_many   :memo_posts, dependent: :destroy
 - has_many   :posts, :through => :memo_posts
 - has_many   :favorites, dependent: :destroy
-- has_many   :favorite_users, :through => :favorites, source: :user
 - belongs_to :user
 
 ## memo_posts テーブル
@@ -171,3 +170,5 @@
 ### Association
 - belongs_to :user
 - belongs_to :memo
+
+![er](https://user-images.githubusercontent.com/68311116/94236598-79897080-ff48-11ea-9bee-d68bcb07775f.png)
