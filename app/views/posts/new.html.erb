@@ -23,3 +23,9 @@
   </div>
   <%= render "shared/sidebar" %>
 </div>
+
+<script>
+$('#post').on('shown.bs.modal', function () {
+  $('#body').trigger('focus')
+})
+</script>
