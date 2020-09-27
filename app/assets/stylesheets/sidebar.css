@@ -10,6 +10,10 @@
   padding: 15px;
 }
 
+.labelit-btn:hover {
+  text-decoration: none;
+}
+
 .search-btn {
   width: 120px;
   background: #007BFF;
@@ -19,6 +23,10 @@
   right: 32px;
   position: fixed;
   padding: 15px;
+}
+
+.search-btn:hover {
+  text-decoration: none;
 }
 
 .memoit-btn {
@@ -32,6 +40,10 @@
   padding: 15px;
 }
 
+.memoit-btn:hover {
+  text-decoration: none;
+}
+
 .index-btn {
   width: 120px;
   background: #339933;
@@ -41,6 +53,10 @@
   right: 32px;
   position: fixed;
   padding: 15px;
+}
+
+.index-btn:hover {
+  text-decoration: none;
 }
 
 .side-btn-text {

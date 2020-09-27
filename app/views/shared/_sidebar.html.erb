@@ -1,24 +1,16 @@
-  <div class='labelit-btn'>
+  <%= link_to new_post_path,method: :GET ,class:'labelit-btn' do%>
     <span class='side-btn-text'>ラベリット!</span>
-    <a href="/posts/new">
-      <%= image_tag 'label.png' , size: '185x50' ,class: "side-btn-icon" %>
-    </a>
-  </div>
-  <div class='search-btn'>
+    <%= image_tag 'label.png' , size: '185x50' ,class: "side-btn-icon" %>
+  <% end%>
+  <%= link_to search_posts_path,method: :GET ,class:'search-btn' do%>
     <span class='side-btn-text'>ラベル検索</span>
-    <a href="/posts/search">
-      <%= image_tag 'search.png' , size: '185x50' ,class: "side-btn-icon" %>
-    </a>
-  </div> 
-  <div class='memoit-btn'>
+    <%= image_tag 'search.png' , size: '185x50' ,class: "side-btn-icon" %>
+  <% end%>
+  <%= link_to new_memo_path,method: :GET ,class:'memoit-btn' do%>
     <span class='side-btn-text'>メモイット!</span>
-    <a href="/memos/new">
-      <%= image_tag 'memo.png' , size: '185x50' ,class: "side-btn-icon" %>
-    </a>
-  </div>
-  <div class='index-btn'>
+    <%= image_tag 'memo.png' , size: '185x50' ,class: "side-btn-icon" %>
+  <% end%>
+  <%= link_to memos_path,method: :GET ,class:'index-btn' do%>
     <span class='side-btn-text'>メモ一覧</span>
-    <a href="/memos">
-      <%= image_tag 'mypage.png' , size: '185x50' ,class: "side-btn-icon" %>
-    </a>
-  </div>
+    <%= image_tag 'mypage.png' , size: '185x50' ,class: "side-btn-icon" %>
+  <% end%>
