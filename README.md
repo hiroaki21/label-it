@@ -103,7 +103,7 @@
 ・インフラ(AWS(EC2、Route53、ALB),Nginx,Unicorn,Capistrano)  
 ・開発環境(MacOS, VSCode, Git, GitHub)  
 
-![cloud](https://user-images.githubusercontent.com/68311116/116981391-63c00300-ad02-11eb-9dea-03969bbf26ed.png)
+![cloud (1)](https://user-images.githubusercontent.com/68311116/116981756-ea74e000-ad02-11eb-981b-31941270e061.png)
 
 
 
