@@ -1,5 +1,3 @@
-![cloud](https://user-images.githubusercontent.com/68311116/116980561-55bdb280-ad01-11eb-8c88-17642b67a123.png)
-![cloud](https://user-images.githubusercontent.com/68311116/116980612-653cfb80-ad01-11eb-8716-6c2d28f4ca1b.png)
 # ラベリット！
 ![Image from Gyazo](https://i.gyazo.com/fe01e61164b4ef9d99abc0b715e4011f.jpg)
 
@@ -106,6 +104,8 @@
 ・開発環境(MacOS, VSCode, Git, GitHub)  
 
 ![clocud](https://user-images.githubusercontent.com/68311116/94170166-ae56e280-feca-11ea-8726-5b4a4d6bff27.png)
+![cloud](https://user-images.githubusercontent.com/68311116/116980683-7be35280-ad01-11eb-8273-06274cbfa9f6.png)
+
 
 
 <br>
