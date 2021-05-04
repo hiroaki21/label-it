@@ -96,12 +96,12 @@
 <br>
 
 # 技術・環境等
-・フロントエンド(javascript, jQuery, HTML/CSS,SCSS, Bootstrap)  
+・フロントエンド(Javascript, jQuery, HTML/CSS,SCSS, Bootstrap)  
 ・バックエンド(Ruby on Rails)  
 ・テスト(RSpec, FactoryBot,Rubocop)  
 ・データベース(MySQL)  
 ・インフラ(AWS(EC2、Route53、ALB),Nginx,Capistrano)  
-・開発環境(MacOS, VScode, Git, GitHub)  
+・開発環境(MacOS, VSCode, Git, GitHub)  
 
 ![clocud](https://user-images.githubusercontent.com/68311116/94170166-ae56e280-feca-11ea-8726-5b4a4d6bff27.png)
 
