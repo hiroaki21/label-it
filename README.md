@@ -99,7 +99,7 @@
 ・フロントエンド(Javascript, jQuery, HTML/CSS,SCSS, Bootstrap)  
 ・バックエンド(Ruby on Rails)  
 ・テスト(RSpec, FactoryBot,Rubocop)  
-・データベース(MySQL)  
+・データベース(MariaDB)  
 ・インフラ(AWS(EC2、Route53、ALB),Nginx,Unicorn,Capistrano)  
 ・開発環境(MacOS, VSCode, Git, GitHub)  
 
