@@ -98,10 +98,10 @@
 # 技術・環境等
 ・フロントエンド(Javascript, jQuery, HTML/CSS,SCSS, Bootstrap)  
 ・バックエンド(Ruby on Rails)  
-・テスト(RSpec, FactoryBot,Rubocop)  
+・テスト(RSpec, FactoryBot, Rubocop)  
 ・データベース(MariaDB)  
-・インフラ(AWS(EC2、Route53、ALB),Nginx,Unicorn,Capistrano)  
-・開発ツール(VSCode, Git, GitHub)  
+・インフラ(AWS(EC2、Route53、ALB), Nginx, Unicorn)  
+・開発ツール(VSCode, Git, GitHub,Capistrano)  
 
 ![cloud](https://user-images.githubusercontent.com/68311116/116982011-40e21e80-ad03-11eb-934b-4e8bfe632375.png)
 
